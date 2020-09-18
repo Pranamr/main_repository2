@@ -1,0 +1,66 @@
+<mvc:View controllerName="AggrBinding.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Table id="idProductsTable" inset="false" mode="SingleSelectLeft" items="{invoice>/Invoices}">
+						<columns>
+							<Column width="12em">
+								<Text text="Product"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Supplier"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+								<Text text="Dimensions"/>
+							</Column>
+							<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+								<Text text="Weight"/>
+							</Column>
+							<Column>
+								<Text text="Price"/>
+							</Column>
+							<Column>
+								<Text text="Button"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{invoice>ProductName}"/>
+									<Text text="{invoice>Quantity}"/>
+									<!--<Text text="{invoice>ExtendedPrice}" />-->
+									<Text
+										text="{ parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"/>
+									<Text text="{invoice>ShipperName}"/>
+									<Text text="{invoice>Status}"/>
+									<Button text="Click to Select" press="onPress"></Button>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Button id="idGoToPage2" text="{i18n>goToPage2}" press="onGoToPage2Press" class="sapUiSmallMarginEnd"/>
+					<!--		   <List-->
+					<!--   headerText="{i18n>invoiceListTitle}"-->
+					<!--   class="sapUiResponsiveMargin"-->
+					<!--   width="auto"-->
+					<!--   items="{invoice>/Invoices}" >-->
+					<!--   <items>-->
+					<!--   				<ColumnListItem>-->
+					<!--	<cells>-->
+					<!--		<Text-->
+					<!--			text="{SupplierName}" />-->
+					<!--		<Text-->
+					<!--			text="{Width} x {Depth} x {Height} {DimUnit}" />-->
+					<!--	</cells>-->
+					<!--</ColumnListItem>-->
+					<!--      <ObjectListItem-->
+					<!--         title="{invoice>Quantity} x {invoice>ProductName}"/>-->
+					<!--   </items>-->
+					<!--</List>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

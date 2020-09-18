@@ -1,0 +1,15 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="AggrBinding.controller.View2"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<!--title="{i18n>detailPageTitle}">-->
+					<ObjectHeader title="Invoice"/>
+					<Input value="{data>productName}" width="2cm" id="idProductName"></Input>
+					<Input value="{data>quantity}" width="2cm" id="idQuantity"></Input>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

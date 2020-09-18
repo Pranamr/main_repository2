@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialogTitle"
+      title="Hello {invoices>/ProductName}">
+   	      <beginButton>
+         <Button
+            text="{i18n>dialogCloseButtonText}"
+            press="onCloseDialog"/>
+      </beginButton>
+   </Dialog>
+</core:FragmentDefinition>
